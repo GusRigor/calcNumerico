@@ -24,18 +24,25 @@ unsigned long long fatorial( int n )
   }
   double expo10(double x){
     double j = 0;
-    for(int i=0; i<10; i++){
+    for(int i=0; i<=10; i++){
       j += (pow(x,i))/fatorial(i);
     }
     return j;
+  }
+  double erroRelativo(double esperado, double obtido){
+    return(((obtido-esperado)/esperado)*100);
   }
 
 int main() {
   int x = 2;
   x = pow(2,2);
+  double v = 2.71828182846;
   double y = fatorial(4);
   double y1 = seno10((3.14159265359)/6);
   y = expo(1);
   y1 = expo10(1);
-  std::cout<< y <<"\n"<<y1;
+
+  std::cout<< y <<"\n"<<y1<<"\n";
+  std::cout<<"Erro relativo: "<<erroRelativo(v,y)<<"\n";
+  std::cout<<"Erro relativo de 10: "<<erroRelativo(v,y1);
 }
