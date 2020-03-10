@@ -1,6 +1,11 @@
+#include <math>
 double max(double x[], int n);
 //Para os outros Ex, basta ajustar a funcao calc
 double calc(double x);
+double calcB(double x);
+double calcC(double x);
+double calcD(double x);
+double calcE(double x);
 double erro(double x, double y);
 double xTil(double x, double y);
 double mod(double x);
@@ -19,6 +24,22 @@ double max(double x[], int n){
 
 double calc(double x){
   return (x*x+(0.96*x)-2.08);
+}
+
+double calcB(double x){
+  return ((1/sin(x))-tg(x));
+}
+
+double calcC(double x){
+  return (exp(x*-1))-log(x));
+}
+
+double calcD(double x){
+  return (x)-2.7*log(x);
+}
+
+double calcE(double x){
+  return (log(x)-tg(x));
 }
 
 double erro(double x, double y){
