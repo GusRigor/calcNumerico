@@ -1,4 +1,4 @@
-#include <math>
+#include <math.h>
 double max(double x[], int n);
 //Para os outros Ex, basta ajustar a funcao calc
 double calc(double x);
@@ -27,11 +27,11 @@ double calc(double x){
 }
 
 double calcB(double x){
-  return ((1/sin(x))-tg(x));
+  return ((1/sin(x))-tan(x));
 }
 
 double calcC(double x){
-  return (exp(x*-1))-log(x));
+  return (exp(x*-1))-log(x);
 }
 
 double calcD(double x){
@@ -39,7 +39,7 @@ double calcD(double x){
 }
 
 double calcE(double x){
-  return (log(x)-tg(x));
+  return (log(x)-tan(x));
 }
 
 double erro(double x, double y){
