@@ -9,10 +9,17 @@ Por: Gustavo G. Rigor
 double max(double x[], int n);
 double fi(double x);
 double dfi(double x);
-
+//Para este programa para novas funcoes será preciso alterar as funcoes fi e dfi
 
 int main() {
-	double resultado = 0;
+    double x0 = 1.2;
+    double aux = 0;
+    double n = 0;
+    double xN[50];
+    double dfi0[50];
+
+
+
 
 	return 0;
 }
