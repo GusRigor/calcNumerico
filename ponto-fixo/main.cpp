@@ -25,18 +25,23 @@ int main() {
     aux = fi(xN[n]);
     dfi0[nfi++] = dfi(xN[n++]);
 
+    std::cout << "Valor inicial: \n";
+    std::cout << "Xn - " << xN[n-1] << " Fi(Xn) - "<< dfi0[nfi-1]<<"\n\n";
+
     do {
         xN[n] = aux;
         aux = fi(xN[n]);
         dfi0[nfi] = dfi(xN[n++]);
+        std::cout << "Xn - " << xN[n - 1] << " Fi(Xn) - " << dfi0[nfi] << "\n";
         
         k = max(dfi0, nfi);
         nfi++;
         
-    } while (aux - xN[n] >= (k/(1-k))*mod(xN[n]-xN[n-1]);
+    } while (aux - xN[n-1] >= (k/(1-k))*mod(xN[n-1]-xN[n-2]);
 
 
-
+    std::cout << "Resultado:\n";
+    std::cout << "Xn - " << xN[n - 1] << " Fi(Xn) - " << dfi0[nfi-1] << "\n";
 
 	return 0;
 }
