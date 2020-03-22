@@ -9,14 +9,31 @@ Por: Gustavo G. Rigor
 double max(double x[], int n);
 double fi(double x);
 double dfi(double x);
+double mod(double x);
 //Para este programa para novas funcoes será preciso alterar as funcoes fi e dfi
 
 int main() {
     double x0 = 1.2;
     double aux = 0;
-    double n = 0;
+    int n = 0;
     double xN[50];
+    int nfi = 0;
     double dfi0[50];
+    double k = 0;
+    
+    xN[n] = x0;
+    aux = fi(xN[n]);
+    dfi0[nfi++] = dfi(xN[n++]);
+
+    do {
+        xN[n] = aux;
+        aux = fi(xN[n]);
+        dfi0[nfi] = dfi(xN[n++]);
+        
+        k = max(dfi0, nfi);
+        nfi++;
+        
+    } while (aux - xN[n] >= (k/(1-k))*mod(xN[n]-xN[n-1]);
 
 
 
@@ -40,4 +57,9 @@ double max(double x[], int n) {
         }
     }
     return temp;
+}
+double mod(double x) {
+    if (x < 0)
+        return x * (-1);
+    return x;
 }
