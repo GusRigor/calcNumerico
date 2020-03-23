@@ -10,6 +10,7 @@ Por: Gustavo G. Rigor
 double f(double x);
 double df(double x);
 double mod(double x);
+double erro(double x, double y);
 
 int main() {
 
@@ -29,4 +30,7 @@ double mod(double x) {
     if (x < 0)
         return x * (-1);
     return x;
+}
+double erro(double x, double y) {
+    return mod((y - x) / 2);
 }
