@@ -13,7 +13,21 @@ double mod(double x);
 double erro(double x, double y);
 
 int main() {
+    double precisao = 0.001;
+    double x0 = 1.0;
+    double Xn[50];
+    int n = 0;
 
+    Xn[n++] = x0;
+    Xn[n] = Xn[n - 1] - (f(Xn[n - 1]) / df(Xn[n - 1]));
+
+    while (precisao<erro(Xn[n],Xn[n-1]))
+    {
+        Xn[++n] = Xn[n - 1] - (f(Xn[n - 1]) / df(Xn[n - 1]));
+        std::cout << Xn[n]<<"\n";
+    }
+    
+    std::cout << Xn[n];
 
 	return 0;
 }
