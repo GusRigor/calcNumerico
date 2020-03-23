@@ -1,7 +1,7 @@
 /*
-Método Newton Rapson
-Feito em função dos exercícios da
-segunda aula do curso de calcNumérico
+MÃ©todo Newton Rapson
+Feito em funÃ§Ã£o dos exercÃ­cios da
+segunda aula do curso de calcNumÃ©rico
 Por: Gustavo G. Rigor
 */
 #include <iostream>
