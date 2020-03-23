@@ -21,13 +21,16 @@ int main() {
     Xn[n++] = x0;
     Xn[n] = Xn[n - 1] - (f(Xn[n - 1]) / df(Xn[n - 1]));
 
+    std::cout << Xn[n]<<"\n";
+
     while (precisao<erro(Xn[n],Xn[n-1]))
     {
-        Xn[++n] = Xn[n - 1] - (f(Xn[n - 1]) / df(Xn[n - 1]));
+        n++;
+        Xn[n] = Xn[n - 1] - (f(Xn[n - 1]) / df(Xn[n - 1]));
         std::cout << Xn[n]<<"\n";
     }
     
-    std::cout << Xn[n];
+    std::cout <<"Valor final: " <<Xn[n]<<" ± "<<erro(Xn[n],Xn[n-1]);
 
 	return 0;
 }
