@@ -1,0 +1,14 @@
+O fuzil selecionado foi o AK-47
+com os se cartucho 5.45x39mm
+sua velocidade de saída é de 900 m/s
+É possível assumir que o projétil do cartucho tem o formato de cone com o Cd = 0.5
+A área de contato será dada por: Pi * 39mm² / 4
+
+Referência:
+https://www.if.ufrgs.br/~lang/Textos/Frenagem_projetil.pdf
+https://www.if.ufrgs.br/novocref/?contact-pergunta=velocidade-de-uma-bala-ao-cair-considerando-a-resistencia-do-ar
+http://professor.ufabc.edu.br/~roldao.rocha/wordpress/wp-content/uploads/Est_Docente_Q3-2017.pdf
+https://alunosonline.uol.com.br/fisica/velocidade-terminal.html
+https://pt.wikipedia.org/wiki/5,45x39mm
+https://pt.wikipedia.org/wiki/AK-74
+https://super.abril.com.br/mundo-estranho/como-funciona-o-ak-47/
