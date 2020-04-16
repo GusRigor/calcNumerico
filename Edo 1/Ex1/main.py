@@ -14,19 +14,33 @@ def fx(v,b,m,g,h):
     return v + ((-b)*v**2/m - g)*h
 
 VlrVterm = float(input(f"""Velocidade terminal: {Vterm} m/s,
-Qual será a velocidade inicial para o corpo?"""))
+Qual será a velocidade inicial para o corpo?
+[Digite 999 para Velocidade igual a velocidade terminal]
+"""))
+tst = input('Mostar o passo a passo?[S/N]')
+if(VlrVterm == 999):
+    VlrVterm = Vterm
+    print(f"""A velocidade terminal ocorreu no tempo {n*h} s.""")
+
 
 v.append(VlrVterm)
+if(tst == 'S'):
+    print(f'Tempo {n}, Velocidade: {v[n]}')
 n = n + 1
 v.append(fx(v[n-1],b,m,g,h))
+if(tst == 'S'):
+    print(f'Tempo {n}, Velocidade: {v[n]}')
 
 while True:
     if(v[n]<0.0):
         break
+    if(Vterm > v[n]):
+        if(Vterm <v[n-1]):
+            print(f"""A velocidade terminal ocorreu no tempo {n*h} s.""")
+        
     n = n + 1
     v.append(fx(v[n-1],b,m,g,h))
-    print(f'Tempo {n}, Velocidade: {V[n]}')
-
-    
+    if(tst == 'S'):
+        print(f'Tempo {n}, Velocidade: {v[n]}')
         
-print(v[n])
+print(f"""A velocidade chegou em Zero no tempo {n*h} s.""")
