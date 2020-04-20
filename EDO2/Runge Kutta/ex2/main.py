@@ -120,7 +120,7 @@ matplotlib.pyplot.plot(graphT,graphX2,label='x2')
 matplotlib.pyplot.plot(graphT,graphX3,label='x3')
 matplotlib.pyplot.xlabel('tempo (t)')
 matplotlib.pyplot.ylabel('valores (x1 e x2 e x3)')
-matplotlib.pyplot.title('Exercício Runge-Kutta graph - Gustavo R. BEC'')
+matplotlib.pyplot.title('Exercício Runge-Kutta graph - Gustavo R. BEC')
 matplotlib.pyplot.legend()
 matplotlib.pyplot.show()
 
