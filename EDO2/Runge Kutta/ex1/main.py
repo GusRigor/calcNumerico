@@ -58,7 +58,7 @@ graphX2 = []
 
 debug = input('Ver passo a passo? [S/N]')
 
-while t < 20:
+while t < 570:
     auxX1 = x1
     auxX2 = x2
     
@@ -81,8 +81,8 @@ while t < 20:
     graphX1.append(x1)
     graphX2.append(x2)
 
-    x1 = x1 + (rk11 + 2 * rk12 + 2 * rk13 + rk14)
-    x2 = x2 + (rk21 + 2 * rk22 + 2 * rk23 + rk24)
+    x1 = x1 + (rk11 + 2 * rk12 + 2 * rk13 + rk14)/6
+    x2 = x2 + (rk21 + 2 * rk22 + 2 * rk23 + rk24)/6
     erro = (x1 - auxX1) / auxX1 + (x2 - auxX2) / auxX2
     t = t + h
 
