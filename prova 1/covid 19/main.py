@@ -17,5 +17,5 @@ def baixar_arquivo(url, endereco=None):
 
 if __name__ == "__main__":
     # testando a função
-    test_url = "https://www.visgraf.impa.br/Data/RefBib/PS_PDF/wtd2018/adaptive-reconstruction-implicit-finalv1.pdf"
+    test_url = ["https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv","https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv"]
     baixar_arquivo(test_url)
