@@ -4,7 +4,7 @@ import os
 
 def baixar_arquivo(url, endereco=None):
     if endereco is None:
-        endereco = os.path.basename(url.split("?")[0])
+        endereco = 'arquivos/' + os.path.basename(url.split("?")[0])
     resposta = requests.get(url, stream=True)
     if resposta.status_code == requests.codes.OK:
         with open(endereco, 'wb') as novo_arquivo:

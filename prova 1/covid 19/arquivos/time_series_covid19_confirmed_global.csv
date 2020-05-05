@@ -42,7 +42,7 @@
   
   
 
-  <meta name="request-id" content="D635:346C:33BC44:43D63F:5EB18550" data-pjax-transient="true"/><meta name="html-safe-nonce" content="69a62571f7c399d1aedae125944481903f266411" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJENjM1OjM0NkM6MzNCQzQ0OjQzRDYzRjo1RUIxODU1MCIsInZpc2l0b3JfaWQiOiIzMDU0Njc1NDQ2NTMyNzY5MTA0IiwicmVnaW9uX2VkZ2UiOiJzYS1lYXN0LTEiLCJyZWdpb25fcmVuZGVyIjoic2EtZWFzdC0xIn0=" data-pjax-transient="true"/><meta name="visitor-hmac" content="37704b03a805044391f38c068079116e7c742f410e3733110ed0c4847d999a9b" data-pjax-transient="true"/>
+  <meta name="request-id" content="D63D:346D:1A6C0A:2301B6:5EB185CC" data-pjax-transient="true"/><meta name="html-safe-nonce" content="927c12d7b014df26ebab5a7f5a0b032cac181264" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJENjNEOjM0NkQ6MUE2QzBBOjIzMDFCNjo1RUIxODVDQyIsInZpc2l0b3JfaWQiOiI4NDg5OTg2NTgxNDQyMTY4MjY4IiwicmVnaW9uX2VkZ2UiOiJzYS1lYXN0LTEiLCJyZWdpb25fcmVuZGVyIjoic2EtZWFzdC0xIn0=" data-pjax-transient="true"/><meta name="visitor-hmac" content="faed92732335f7d07267d9c6d825980853846f2970e79a92c8f726681a3d19a1" data-pjax-transient="true"/>
 
 
 
@@ -288,7 +288,7 @@
           spellcheck="false"
           autocomplete="off"
           >
-          <input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="8ad+HP8JR/N0ZY7TPpwtfub3ysoAwOFilidorhLja0DOunbtRitwe26rIQMY/kGDjYgJbIKqXrm8jydjIPeRpA==" />
+          <input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="/ijHSIjD1e7emQ0fC0upj47aPvt1On8NquS/vtqcqUJ177n6FUkHhIplyAg85BmeQsQEX0S6St6+p19fOgMzOA==" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -758,7 +758,7 @@
         </span>
         <span class="d-inline-block flex-shrink-0 v-align-bottom f6 mt-2 mt-md-0">
           <a class="pr-2 text-mono link-gray" href="/CSSEGISandData/COVID-19/commit/dce1b48f54bd7551295c27a2878701cf2c58a1c8" data-pjax>dce1b48</a>
-          <relative-time datetime="2020-05-05T02:55:42Z" class="no-wrap">May 4, 2020</relative-time>
+          <relative-time datetime="2020-05-05T02:55:42Z" class="no-wrap">May 5, 2020</relative-time>
         </span>
       </div>
 
@@ -770,7 +770,7 @@
         <details-dialog
           class="Box Box--overlay d-flex flex-column anim-fade-in fast"
           aria-label="Users who have contributed to this file"
-          src="/CSSEGISandData/COVID-19/contributors-list/dce1b48f54bd7551295c27a2878701cf2c58a1c8/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv" preload>
+          src="/CSSEGISandData/COVID-19/contributors-list/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv" preload>
           <div class="Box-header">
             <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
               <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
