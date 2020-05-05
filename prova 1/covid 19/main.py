@@ -17,5 +17,9 @@ def baixar_arquivo(url, endereco=None):
 
 if __name__ == "__main__":
     # testando a função
+    n = 0
     test_url = ["https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv","https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv"]
-    baixar_arquivo(test_url)
+    while n != 3:
+        baixar_arquivo(test_url[n])
+        n += 1 
+        

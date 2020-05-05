@@ -1,8 +1,9 @@
-O fuzil selecionado foi o AK-47
+﻿O fuzil selecionado foi o AK-47
 com os se cartucho 5.45x39mm
 sua velocidade de saída é de 900 m/s
 É possível assumir que o projétil do cartucho tem o formato de cone com o Cd = 0.5
 A área de contato será dada por: Pi * 39mm² / 4
+A massa do projétil é de 3,43 g
 
 Referência:
 https://www.if.ufrgs.br/~lang/Textos/Frenagem_projetil.pdf
