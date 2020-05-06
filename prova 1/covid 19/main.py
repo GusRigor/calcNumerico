@@ -181,4 +181,56 @@ graphX2 = []
 graphX3 = []
 graphX4 = []
 
+while t < 800:
+    auxX1 = x1
+    auxX2 = x2
+    auxX3 = x3
+    auxX4 = x4
+
+    rk11 = h*kUm1(x1)
+    rk21 = h*kUm2(x1, x2)
+    rk31 = h*kUm3(x2)
+    rk41 = h*kUm4(x2)
+
+    rk12 = h*kDois1(x1, rk11)
+    rk22 = h*kDois2(x1, x2, rk21)
+    rk32 = h*kDois3(x2, rk31)
+    rk42 = h*kDois3(x2, rk41)
+
+    rk13 = h*kTres1(x1, rk12)
+    rk23 = h*kTres2(x1, x2, rk22)
+    rk33 = h*kTres3(x2, rk32)
+    rk43 = h*kTres3(x2, rk42)
+
+    rk14 = h*kQuatro1(x1, rk13)
+    rk24 = h*kQuatro2(x1, x2, rk23)
+    rk34 = h*kQuatro3(x2, rk33)
+    rk34 = h*kQuatro3(x2, rk43)
+
+    print(f't:{t} || PP:{x1} || C:{x2} || M:{x3} || R:{x4}')
+
+    graphT.append(t)
+    graphX2.append(x2)
+    graphX3.append(x3)
+    graphX4.append(x4)
+
+    x1 = x1 + (rk11 + 2 * rk12 + 2 * rk13 + rk14)/6
+    x2 = x2 + (rk21 + 2 * rk22 + 2 * rk23 + rk24)/6
+    x3 = x3 + (rk31 + 2 * rk32 + 2 * rk33 + rk34)/6
+    x4 = x4 + (rk41 + 2 * rk42 + 2 * rk43 + rk44)/6
+    erro = (x1 - auxX1) / auxX1 + (x2 - auxX2) / auxX2 + (x3 - auxX3) / auxX3 + (x4 - auxX4) / auxX4
+    t = t + h
+
+matplotlib.pyplot.plot(graphT,graphX2,label='C(t)')
+matplotlib.pyplot.plot(graphT,graphX3,label='M(t)')
+matplotlib.pyplot.plot(graphT,graphX4,label='R(t)')
+matplotlib.pyplot.xlabel('tempo (t)')
+matplotlib.pyplot.ylabel('valores (C(t) e M(t) e R(t))')
+matplotlib.pyplot.title('Exercício Covid 19 graph - Gustavo R. BEC')
+matplotlib.pyplot.legend()
+matplotlib.pyplot.show()
+
+    
+
+    
 
