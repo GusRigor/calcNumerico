@@ -1,6 +1,13 @@
+#Exe c/ imunidade
+
 import requests
 import os
 import csv
+import math
+import matplotlib.pyplot
+
+def DeltaX(caso):
+    return int(caso[len(caso)-2]) - int(caso[len(caso)-1])
 
 def baixar_arquivo(url, endereco=None):
     if endereco is None:
@@ -35,7 +42,7 @@ del casos [0]
 del casos [0]
 del casos [0]
 del casos [0]
-#print(casos)
+print(casos)
 print(casos[len(casos) - 1])
 
 with open('arquivos/time_series_covid19_recovered_global.csv', 'r') as arqConfirmados:
@@ -50,7 +57,7 @@ del recuperados [0]
 del recuperados [0]
 del recuperados [0]
 del recuperados [0]
-#print(recuperados)
+print(recuperados)
 print(recuperados[len(recuperados) - 1])
 
 with open('arquivos/time_series_covid19_deaths_global.csv', 'r') as arqConfirmados:
@@ -65,5 +72,24 @@ del mortos [0]
 del mortos [0]
 del mortos [0]
 del mortos [0]
-#print(mortos)
+print(mortos)
 print(mortos[len(mortos) - 1])
+
+deltaCasos = DeltaX(casos)
+deltaMortes = DeltaX(mortos)
+deltaRecuperados = DeltaX(recuperados)
+
+k12 = deltaCasos
+k23 = deltaMortes / deltaCasos
+k24 = deltaRecuperados / deltaCasos
+
+Brasil = 209000000 * 0.7 - int(casos[len(casos)-1])
+
+print(k12)
+print(k23)
+print(k24)
+print(f'{Brasil} + Pessoas')
+
+
+
+
