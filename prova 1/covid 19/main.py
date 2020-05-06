@@ -1,6 +1,6 @@
 import requests
 import os
-
+import csv
 
 def baixar_arquivo(url, endereco=None):
     if endereco is None:
@@ -18,8 +18,52 @@ def baixar_arquivo(url, endereco=None):
 if __name__ == "__main__":
     # testando a função
     n = 0
-    test_url = ["https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv","https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv"]
+    test_url = ["https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv","https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv"]
     while n != 3:
         baixar_arquivo(test_url[n])
         n += 1 
         
+with open('arquivos/time_series_covid19_confirmed_global.csv', 'r') as arqConfirmados:
+    ler = csv.DictReader(arqConfirmados)
+    for linha in ler:
+        if linha['Country/Region'] == 'Brazil':
+            casosConfirmados = linha
+casos = []
+for e in casosConfirmados.values():
+    casos.append(e)
+del casos [0]
+del casos [0]
+del casos [0]
+del casos [0]
+#print(casos)
+print(casos[len(casos) - 1])
+
+with open('arquivos/time_series_covid19_recovered_global.csv', 'r') as arqConfirmados:
+    ler = csv.DictReader(arqConfirmados)
+    for linha in ler:
+        if linha['Country/Region'] == 'Brazil':
+            RecuperadosCasos = linha
+recuperados = []
+for e in RecuperadosCasos.values():
+    recuperados.append(e)
+del recuperados [0]
+del recuperados [0]
+del recuperados [0]
+del recuperados [0]
+#print(recuperados)
+print(recuperados[len(recuperados) - 1])
+
+with open('arquivos/time_series_covid19_deaths_global.csv', 'r') as arqConfirmados:
+    ler = csv.DictReader(arqConfirmados)
+    for linha in ler:
+        if linha['Country/Region'] == 'Brazil':
+            mortosConfirmados = linha
+mortos = []
+for e in mortosConfirmados.values():
+    mortos.append(e)
+del mortos [0]
+del mortos [0]
+del mortos [0]
+del mortos [0]
+#print(mortos)
+print(mortos[len(mortos) - 1])
