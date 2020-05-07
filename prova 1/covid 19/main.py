@@ -131,8 +131,8 @@ deltaMortes = DeltaX(mortos)
 deltaRecuperados = DeltaX(recuperados)
 
 k12 = deltaCasos /  Brasil
-k23 = deltaMortes / int(casos[len(casos)-1])
-k24 = deltaRecuperados / int(casos[len(casos)-1])
+k23 = deltaMortes / int(casos[len(casos)-2])
+k24 = deltaRecuperados / int(casos[len(casos)-2])
 
 
 
@@ -183,7 +183,7 @@ graphX2 = []
 graphX3 = []
 graphX4 = []
 
-while t < 12:
+while t < 14:
     auxX1 = x1
     auxX2 = x2
     auxX3 = x3
@@ -209,7 +209,7 @@ while t < 12:
     rk34 = h*kQuatro3(x2, rk33)
     rk34 = h*kQuatro4(x2, rk43)
 
-    print(f't:{t} || PP:{x1} || C:{x2} || M:{x3} || R:{x4}')
+    print(f't:{t} || PP:{x1:.0f} || C:{x2:.0f} || M:{x3:.0f} || R:{x4:.0f}')
 
     graphT.append(t)
     graphX2.append(x2)
@@ -222,8 +222,11 @@ while t < 12:
     x4 = x4 + (rk41 + 2 * rk42 + 2 * rk43 + rk44)/6
 
     k12 = (x2 - auxX2) / x1
-    k23 = (x3 - auxX3) / x2
-    k24 = (x4 - auxX4) / x2
+    print(f'X2: {x2}')
+    print(f'auxX2: {auxX2}')
+    print(f'K12: {k12}')
+    k23 = (x3 - auxX3) / auxX2
+    k24 = (x4 - auxX4) / auxX2
 
     erro = (x1 - auxX1) / auxX1 + (x2 - auxX2) / auxX2 + (x3 - auxX3) / auxX3 + (x4 - auxX4) / auxX4
     t = t + h
