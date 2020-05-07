@@ -183,7 +183,7 @@ graphX2 = []
 graphX3 = []
 graphX4 = []
 
-while t < 20:
+while t < 12:
     auxX1 = x1
     auxX2 = x2
     auxX3 = x3
