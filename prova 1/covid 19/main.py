@@ -7,16 +7,16 @@ import math
 import matplotlib.pyplot
 
 def kUm1(x1):
-    return - k12 * x1
+    return -1 * k12 * x1
 
 def kDois1(x1, k1):
-    return - k12 * (x1 + k1/2)
+    return -1 * k12 * (x1 + k1/2)
 
 def kTres1(x1, k2):
-    return - k12 * (x1 + k2/2)
+    return -1 * k12 * (x1 + k2/2)
 
 def kQuatro1(x1, k3):
-    return - k12 * (x1 + k3)
+    return -1 * k12 * (x1 + k3)
 
 def kUm2(x1, x2):
     return k12 * x1 - (k23 + k24) * x2
@@ -56,7 +56,7 @@ def kQuatro4(x2, k3):
 
 
 def DeltaX(caso):
-    return int(caso[len(caso)-2]) - int(caso[len(caso)-1])
+    return int(caso[len(caso)-1]) - int(caso[len(caso)-2])
 
 def baixar_arquivo(url, endereco=None):
     if endereco is None:
@@ -124,15 +124,17 @@ del mortos [0]
 print(mortos)
 print(mortos[len(mortos) - 1])
 
+Brasil = 209000000 * 0.7 - int(casos[len(casos)-1])
+
 deltaCasos = DeltaX(casos)
 deltaMortes = DeltaX(mortos)
 deltaRecuperados = DeltaX(recuperados)
 
-k12 = deltaCasos
-k23 = deltaMortes / deltaCasos
-k24 = deltaRecuperados / deltaCasos
+k12 = deltaCasos /  Brasil
+k23 = deltaMortes / int(casos[len(casos)-1])
+k24 = deltaRecuperados / int(casos[len(casos)-1])
 
-Brasil = 209000000 * 0.7 - int(casos[len(casos)-1])
+
 
 print(k12)
 print(k23)
@@ -181,7 +183,7 @@ graphX2 = []
 graphX3 = []
 graphX4 = []
 
-while t < 800:
+while t < 20:
     auxX1 = x1
     auxX2 = x2
     auxX3 = x3
@@ -195,17 +197,17 @@ while t < 800:
     rk12 = h*kDois1(x1, rk11)
     rk22 = h*kDois2(x1, x2, rk21)
     rk32 = h*kDois3(x2, rk31)
-    rk42 = h*kDois3(x2, rk41)
+    rk42 = h*kDois4(x2, rk41)
 
     rk13 = h*kTres1(x1, rk12)
     rk23 = h*kTres2(x1, x2, rk22)
     rk33 = h*kTres3(x2, rk32)
-    rk43 = h*kTres3(x2, rk42)
+    rk43 = h*kTres4(x2, rk42)
 
     rk14 = h*kQuatro1(x1, rk13)
     rk24 = h*kQuatro2(x1, x2, rk23)
     rk34 = h*kQuatro3(x2, rk33)
-    rk34 = h*kQuatro3(x2, rk43)
+    rk34 = h*kQuatro4(x2, rk43)
 
     print(f't:{t} || PP:{x1} || C:{x2} || M:{x3} || R:{x4}')
 
@@ -218,6 +220,11 @@ while t < 800:
     x2 = x2 + (rk21 + 2 * rk22 + 2 * rk23 + rk24)/6
     x3 = x3 + (rk31 + 2 * rk32 + 2 * rk33 + rk34)/6
     x4 = x4 + (rk41 + 2 * rk42 + 2 * rk43 + rk44)/6
+
+    k12 = (x2 - auxX2) / x1
+    k23 = (x3 - auxX3) / x2
+    k24 = (x4 - auxX4) / x2
+
     erro = (x1 - auxX1) / auxX1 + (x2 - auxX2) / auxX2 + (x3 - auxX3) / auxX3 + (x4 - auxX4) / auxX4
     t = t + h
 
