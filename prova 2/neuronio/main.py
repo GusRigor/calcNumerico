@@ -65,13 +65,14 @@ pL = gL * (tensao[0] - vL)
 
 aux = tensao[0] - (pN + pM + pL) * gama
 tensao.append(aux)
+tempo.append(t0+dT)
 
 #print(tensao[1])
 
 i = 0.0
 c = 1
 
-while i <= 1*10**(-3):
+while i <= .25*10**(-3):
     auxN = dNdT(auxN, tensao[c])        
     auxM = dMdT(auxM, tensao[c])
     auxH = dHdT(auxM, tensao[c])
@@ -88,3 +89,11 @@ while i <= 1*10**(-3):
     tempo.append(i)
 
 print(tensao)
+
+matplotlib.pyplot.ioff()
+matplotlib.pyplot.plot(tempo,tensao,label='V(t) V')
+matplotlib.pyplot.xlabel('tempo (t) s')
+matplotlib.pyplot.ylabel('valores (V(t))')
+matplotlib.pyplot.title('Prova 2 Modelo H-H graph - Gustavo R. BEC')
+matplotlib.pyplot.legend()
+matplotlib.pyplot.show()
