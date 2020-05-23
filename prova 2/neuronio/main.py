@@ -31,6 +31,15 @@ def dMdT(m, v, t = 0.01 * 10**(-3)):
 def dHdT(h, v, t = 0.01 * 10**(-3)):
     return h + t * (alphaH(v) * (1 - h) - betaH(v) * h)
 
+
+print('''Modelo de Hodgkin e Huxlei
+Feito por: Gustavo G. Rigor
+Onde é utilizado ∆t = 0.01 ms
+Dentro do intervalo de [0, 0.25] ms
+Caso deseje alterar ∆t aparte S''')
+AAA = input()
+
+
 gK = 3.60
 gNa = 12.0
 gL = 0.03
@@ -50,7 +59,10 @@ auxH = h0
 v0 = -65.002  * 10**(-3) #mV
 t0 = 0 #segundos
 
-dT = 0.01 * 10**(-3) #ms
+if AAA == 'S':
+    dT = float(input('Valor para ∆t em ms')) * 10**(-3) #ms
+else:    
+    dT = 0.01 * 10**(-3) #ms
 Cm = 1 * 10**(-6) #µF
 gama = dT/Cm
 
@@ -69,13 +81,29 @@ tempo.append(t0+dT)
 
 #print(tensao[1])
 
+M = [m0]
+M.append(m0)
+N = [n0]
+N.append(n0)
+H = [n0]
+H.append(h0)
+
 i = 0.0
 c = 1
 
-while i <= .25*10**(-3):
-    auxN = dNdT(auxN, tensao[c])        
+txt = input('Caso deseje alterar ∆t aparte S')
+if txt == 'S':
+    parada = float(input('Valor para tF em ms')) * 10**(-3) #ms 
+else:
+    parada = .25*10**(-3)
+
+while i <= parada:
+    auxN = dNdT(auxN, tensao[c])
+    N.append(auxN)
     auxM = dMdT(auxM, tensao[c])
+    M.append(auxM)
     auxH = dHdT(auxM, tensao[c])
+    H.append(auxH)
 
     pN = gK * (auxN**4) * (tensao[c] - vK)
     pM = gNa * (auxM**3) * auxH * (tensao[c] - vNa)
@@ -88,10 +116,13 @@ while i <= .25*10**(-3):
     i = i + dT
     tempo.append(i)
 
-print(tensao)
+#print(tensao)
 
 matplotlib.pyplot.ioff()
 matplotlib.pyplot.plot(tempo,tensao,label='V(t) V')
+#matplotlib.pyplot.plot(tempo,N,label='N(t)')
+#matplotlib.pyplot.plot(tempo,M,label='M(t)')
+#matplotlib.pyplot.plot(tempo,H,label='H(t)')
 matplotlib.pyplot.xlabel('tempo (t) s')
 matplotlib.pyplot.ylabel('valores (V(t))')
 matplotlib.pyplot.title('Prova 2 Modelo H-H graph - Gustavo R. BEC')
