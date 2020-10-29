@@ -1,15 +1,15 @@
 boltz = 5.67 * 10**(-8) # w/m2K4
-h = 5 #w/m2K
-p = 0.9
+h = 30 #w/m2K
+p = 0.85
 e = 0.15
-T_Amb = 300 #K
-Q_recebe = 900 #W/m2
+T_Amb = 286 #K
+Q_recebe = 1000 #W/m2
 
 def diferenca(T):
     return p * Q_recebe - (e * boltz * T**4 + h*(T - T_Amb))
 
-#print(diferenca(400))
-Tini = 400
+print(diferenca(100))
+Tini = 100
 passo = 1
 
 T = Tini
