@@ -82,3 +82,6 @@ def coeficiente_transmicao(n1, n2):
 
 def densidade_potencia(coeficiente, tensao, impedancia):
     return (coeficiente**2)*(tensao**2)/(2*impedancia)
+
+
+print(constante_de_propagacao(2, 1, 2.25, 15*(10**9)))
